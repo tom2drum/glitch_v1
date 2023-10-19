@@ -1,0 +1,9 @@
+Host: www.glitch.ohhhh.me
+
+User-agent: *
+Disallow: /img
+Disallow: /js
+Disallow: /models
+Disallow: /css/
+
+Sitemap: http://glitch.ohhhh.me/sitemap.xml

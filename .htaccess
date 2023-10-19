@@ -1,0 +1,30 @@
+RewriteEngine On
+
+#RewriteBase /php_webinar_s1/blog_db
+
+#exceptions = all files .css, .js etc.
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#rule // set parametr in get-array
+RewriteRule .* index.php?querystring=$0 [QSA]
+#QSA - query string add // enable additional get-parametrs
+
+
+<FilesMatch "\.(php)$" >
+Deny from all
+</FilesMatch>
+
+<FilesMatch "index.(php)$">
+Allow from all
+</FilesMatch>
+
+# Заголовок Cache-Control
+<IfModule mod_headers.c>
+        Header append Cache-Control "no-store, no-cache, must-revalidate"
+</IfModule>
+
+# Заголовок Expires
+<IfModule mod_expires.c>
+        ExpiresActive On ExpiresDefault "now"
+</IfModule>
+
