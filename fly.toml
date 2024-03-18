@@ -1,0 +1,18 @@
+# fly.toml app configuration file generated for glitch-ohhhh on 2023-11-07T18:32:31-03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "glitch-ohhhh"
+primary_region = "ams"
+
+[build]
+  dockerfile = "./Dockerfile"
+
+[http_service]
+  internal_port = 80
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
