@@ -9,6 +9,10 @@ primary_region = "ams"
 [build]
   dockerfile = "./Dockerfile"
 
+[mounts]
+  source = "img"
+  destination = "/app/img"
+
 [http_service]
   internal_port = 80
   force_https = true

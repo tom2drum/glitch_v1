@@ -2,7 +2,7 @@ FROM legalthings/apache-php71
 
 WORKDIR /app
 COPY . .
-RUN ["mkdir", "img"]
+RUN ["mkdir", "-p", "img"]
 RUN ["chmod", "-R", "755", "./"]
 
 RUN ["chown", "-R", "www-data:www-data", "./img"]
